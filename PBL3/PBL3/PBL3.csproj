@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,78 +55,118 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DangKy.cs">
+    <Compile Include="BLL\BLL_Login.cs" />
+    <Compile Include="View\DangKy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DangKy.Designer.cs">
+    <Compile Include="View\DangKy.Designer.cs">
       <DependentUpon>DangKy.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListP.cs">
+    <Compile Include="HD.cs">
+      <DependentUpon>QLKTX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HopDong.cs">
+      <DependentUpon>QLKTX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Khu.cs">
+      <DependentUpon>QLKTX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View\ListP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListP.Designer.cs">
+    <Compile Include="View\ListP.Designer.cs">
       <DependentUpon>ListP.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListSV.cs">
+    <Compile Include="View\ListSV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListSV.Designer.cs">
+    <Compile Include="View\ListSV.Designer.cs">
       <DependentUpon>ListSV.cs</DependentUpon>
     </Compile>
-    <Compile Include="DNhap.cs">
+    <Compile Include="View\DNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DNhap.Designer.cs">
+    <Compile Include="View\DNhap.Designer.cs">
       <DependentUpon>DNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuAdmin.cs">
+    <Compile Include="Login.cs">
+      <DependentUpon>QLKTX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View\MenuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuAdmin.Designer.cs">
+    <Compile Include="View\MenuAdmin.Designer.cs">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuMainSV.cs">
+    <Compile Include="View\MenuMainSV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuMainSV.Designer.cs">
+    <Compile Include="View\MenuMainSV.Designer.cs">
       <DependentUpon>MenuMainSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien.cs">
+      <DependentUpon>QLKTX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Phong.cs">
+      <DependentUpon>QLKTX.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ThongTinP.cs">
+    <Compile Include="QLKTX.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLKTX.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QLKTX.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLKTX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QLKTX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLKTX.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SV.cs">
+      <DependentUpon>QLKTX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThongTinP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThongTinP.Designer.cs">
+    <Compile Include="View\ThongTinP.Designer.cs">
       <DependentUpon>ThongTinP.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThongTinSV.cs">
+    <Compile Include="View\ThongTinSV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThongTinSV.Designer.cs">
+    <Compile Include="View\ThongTinSV.Designer.cs">
       <DependentUpon>ThongTinSV.cs</DependentUpon>
     </Compile>
-    <Compile Include="TTAdmin.cs">
+    <Compile Include="TKNH.cs">
+      <DependentUpon>QLKTX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View\TTAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TTAdmin.Designer.cs">
+    <Compile Include="View\TTAdmin.Designer.cs">
       <DependentUpon>TTAdmin.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DangKy.resx">
+    <EmbeddedResource Include="View\DangKy.resx">
       <DependentUpon>DangKy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListP.resx">
+    <EmbeddedResource Include="View\ListP.resx">
       <DependentUpon>ListP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListSV.resx">
+    <EmbeddedResource Include="View\ListSV.resx">
       <DependentUpon>ListSV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DNhap.resx">
+    <EmbeddedResource Include="View\DNhap.resx">
       <DependentUpon>DNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuAdmin.resx">
+    <EmbeddedResource Include="View\MenuAdmin.resx">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuMainSV.resx">
+    <EmbeddedResource Include="View\MenuMainSV.resx">
       <DependentUpon>MenuMainSV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -129,15 +178,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ThongTinP.resx">
+    <EmbeddedResource Include="View\ThongTinP.resx">
       <DependentUpon>ThongTinP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThongTinSV.resx">
+    <EmbeddedResource Include="View\ThongTinSV.resx">
       <DependentUpon>ThongTinSV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TTAdmin.resx">
+    <EmbeddedResource Include="View\TTAdmin.resx">
       <DependentUpon>TTAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -147,9 +197,31 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="QLKTX.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLKTX.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="QLKTX.edmx.diagram">
+      <DependentUpon>QLKTX.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="QLKTX.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>QLKTX.Context.cs</LastGenOutput>
+      <DependentUpon>QLKTX.edmx</DependentUpon>
+    </Content>
+    <Content Include="QLKTX.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLKTX.edmx</DependentUpon>
+      <LastGenOutput>QLKTX.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

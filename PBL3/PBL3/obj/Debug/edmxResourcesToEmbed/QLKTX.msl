@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLKTXStoreContainer" CdmEntityContainer="PBL3Entities">
+    <EntitySetMapping Name="HDs">
+      <EntityTypeMapping TypeName="QLKTX.HD">
+        <MappingFragment StoreEntitySet="HD">
+          <ScalarProperty Name="So_HoaD" ColumnName="So_HoaD" />
+          <ScalarProperty Name="So_P" ColumnName="So_P" />
+          <ScalarProperty Name="TienP" ColumnName="TienP" />
+          <ScalarProperty Name="TienD" ColumnName="TienD" />
+          <ScalarProperty Name="TienN" ColumnName="TienN" />
+          <ScalarProperty Name="NgayG" ColumnName="NgayG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HopDongs">
+      <EntityTypeMapping TypeName="QLKTX.HopDong">
+        <MappingFragment StoreEntitySet="HopDong">
+          <ScalarProperty Name="Ma_HD" ColumnName="Ma_HD" />
+          <ScalarProperty Name="Ma_SV" ColumnName="Ma_SV" />
+          <ScalarProperty Name="Ma_NV" ColumnName="Ma_NV" />
+          <ScalarProperty Name="So_P" ColumnName="So_P" />
+          <ScalarProperty Name="NgayL" ColumnName="NgayL" />
+          <ScalarProperty Name="NgayBD" ColumnName="NgayBD" />
+          <ScalarProperty Name="NgayKT" ColumnName="NgayKT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Khus">
+      <EntityTypeMapping TypeName="QLKTX.Khu">
+        <MappingFragment StoreEntitySet="Khu">
+          <ScalarProperty Name="Khu1" ColumnName="Khu" />
+          <ScalarProperty Name="Ma_NV" ColumnName="Ma_NV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="QLKTX.Login">
+        <MappingFragment StoreEntitySet="Login">
+          <ScalarProperty Name="Ma_TK" ColumnName="Ma_TK" />
+          <ScalarProperty Name="Loai_TK" ColumnName="Loai_TK" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhanViens">
+      <EntityTypeMapping TypeName="QLKTX.NhanVien">
+        <MappingFragment StoreEntitySet="NhanVien">
+          <ScalarProperty Name="Ma_NV" ColumnName="Ma_NV" />
+          <ScalarProperty Name="Ma_TK" ColumnName="Ma_TK" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="NSinh" ColumnName="NSinh" />
+          <ScalarProperty Name="GTinh" ColumnName="GTinh" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phongs">
+      <EntityTypeMapping TypeName="QLKTX.Phong">
+        <MappingFragment StoreEntitySet="Phong">
+          <ScalarProperty Name="So_P" ColumnName="So_P" />
+          <ScalarProperty Name="Khu" ColumnName="Khu" />
+          <ScalarProperty Name="SL" ColumnName="SL" />
+          <ScalarProperty Name="TTP" ColumnName="TTP" />
+          <ScalarProperty Name="MotaK" ColumnName="MotaK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SVs">
+      <EntityTypeMapping TypeName="QLKTX.SV">
+        <MappingFragment StoreEntitySet="SV">
+          <ScalarProperty Name="Ma_SV" ColumnName="Ma_SV" />
+          <ScalarProperty Name="Ma_TK" ColumnName="Ma_TK" />
+          <ScalarProperty Name="Ho_Ten" ColumnName="Ho_Ten" />
+          <ScalarProperty Name="NS" ColumnName="NS" />
+          <ScalarProperty Name="GT" ColumnName="GT" />
+          <ScalarProperty Name="CMND" ColumnName="CMND" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="Dia_Chi" ColumnName="Dia_Chi" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TKNHs">
+      <EntityTypeMapping TypeName="QLKTX.TKNH">
+        <MappingFragment StoreEntitySet="TKNH">
+          <ScalarProperty Name="So_TK" ColumnName="So_TK" />
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
+          <ScalarProperty Name="So_tien" ColumnName="So_tien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
