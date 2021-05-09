@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBL3.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,7 +23,8 @@ namespace PBL3
         public void SetGUI()
         {
             txtMaTK.Text = lg.Ma_TK;
-            txtNameTK.Text = lg.UserName;
+           
+            txtNameTK.Text = BLL_MenuAD.Instance.BLL_MenuADSetName(lg.Ma_TK);
         }
     }
 }
