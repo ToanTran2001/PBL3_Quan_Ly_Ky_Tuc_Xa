@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLKTX" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="HD">
+    <Key>
+      <PropertyRef Name="So_HoaD" />
+    </Key>
+    <Property Name="So_HoaD" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="So_P" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="TienP" Type="Int32" />
+    <Property Name="TienD" Type="Int32" />
+    <Property Name="TienN" Type="Int32" />
+    <Property Name="NgayG" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Phong" Relationship="Self.FK_HD_Phong" FromRole="HD" ToRole="Phong" />
+  </EntityType>
+  <EntityType Name="HopDong">
+    <Key>
+      <PropertyRef Name="Ma_HD" />
+    </Key>
+    <Property Name="Ma_HD" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Ma_SV" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Ma_NV" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="So_P" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="NgayL" Type="DateTime" Precision="0" />
+    <Property Name="NgayBD" Type="DateTime" Precision="0" />
+    <Property Name="NgayKT" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="NhanVien" Relationship="Self.FK_HopDong_NhanVien" FromRole="HopDong" ToRole="NhanVien" />
+    <NavigationProperty Name="Phong" Relationship="Self.FK_HopDong_Phong" FromRole="HopDong" ToRole="Phong" />
+    <NavigationProperty Name="SV" Relationship="Self.FK_HopDong_SV" FromRole="HopDong" ToRole="SV" />
+  </EntityType>
+  <EntityType Name="Khu">
+    <Key>
+      <PropertyRef Name="Khu1" />
+    </Key>
+    <Property Name="Khu1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Ma_NV" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="NhanVien" Relationship="Self.FK_Khu_NhanVien" FromRole="Khu" ToRole="NhanVien" />
+    <NavigationProperty Name="Phongs" Relationship="Self.FK_Phong_Khu1" FromRole="Khu" ToRole="Phong" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="Ma_TK" />
+    </Key>
+    <Property Name="Ma_TK" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Loai_TK" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="UserName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="NhanViens" Relationship="Self.FK_NhanVien_Login" FromRole="Login" ToRole="NhanVien" />
+    <NavigationProperty Name="SVs" Relationship="Self.FK_SV_Login" FromRole="Login" ToRole="SV" />
+  </EntityType>
+  <EntityType Name="NhanVien">
+    <Key>
+      <PropertyRef Name="Ma_NV" />
+    </Key>
+    <Property Name="Ma_NV" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Ma_TK" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NSinh" Type="DateTime" Precision="0" />
+    <Property Name="GTinh" Type="Boolean" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ChucVu" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="HopDongs" Relationship="Self.FK_HopDong_NhanVien" FromRole="NhanVien" ToRole="HopDong" />
+    <NavigationProperty Name="Khus" Relationship="Self.FK_Khu_NhanVien" FromRole="NhanVien" ToRole="Khu" />
+    <NavigationProperty Name="Login" Relationship="Self.FK_NhanVien_Login" FromRole="NhanVien" ToRole="Login" />
+  </EntityType>
+  <EntityType Name="Phong">
+    <Key>
+      <PropertyRef Name="So_P" />
+    </Key>
+    <Property Name="So_P" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Khu" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="SL" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="TTP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MotaK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HDs" Relationship="Self.FK_HD_Phong" FromRole="Phong" ToRole="HD" />
+    <NavigationProperty Name="HopDongs" Relationship="Self.FK_HopDong_Phong" FromRole="Phong" ToRole="HopDong" />
+    <NavigationProperty Name="Khu1" Relationship="Self.FK_Phong_Khu1" FromRole="Phong" ToRole="Khu" />
+  </EntityType>
+  <EntityType Name="SV">
+    <Key>
+      <PropertyRef Name="Ma_SV" />
+    </Key>
+    <Property Name="Ma_SV" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Ma_TK" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Ho_Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NS" Type="DateTime" Precision="0" />
+    <Property Name="GT" Type="Boolean" />
+    <Property Name="CMND" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Dia_Chi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HopDongs" Relationship="Self.FK_HopDong_SV" FromRole="SV" ToRole="HopDong" />
+    <NavigationProperty Name="Login" Relationship="Self.FK_SV_Login" FromRole="SV" ToRole="Login" />
+  </EntityType>
+  <EntityType Name="TKNH">
+    <Key>
+      <PropertyRef Name="So_TK" />
+    </Key>
+    <Property Name="So_TK" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Pass" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="So_tien" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_HD_Phong">
+    <End Role="Phong" Type="Self.Phong" Multiplicity="0..1" />
+    <End Role="HD" Type="Self.HD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phong">
+        <PropertyRef Name="So_P" />
+      </Principal>
+      <Dependent Role="HD">
+        <PropertyRef Name="So_P" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HopDong_NhanVien">
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
+    <End Role="HopDong" Type="Self.HopDong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="Ma_NV" />
+      </Principal>
+      <Dependent Role="HopDong">
+        <PropertyRef Name="Ma_NV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HopDong_Phong">
+    <End Role="Phong" Type="Self.Phong" Multiplicity="0..1" />
+    <End Role="HopDong" Type="Self.HopDong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phong">
+        <PropertyRef Name="So_P" />
+      </Principal>
+      <Dependent Role="HopDong">
+        <PropertyRef Name="So_P" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HopDong_SV">
+    <End Role="SV" Type="Self.SV" Multiplicity="0..1" />
+    <End Role="HopDong" Type="Self.HopDong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SV">
+        <PropertyRef Name="Ma_SV" />
+      </Principal>
+      <Dependent Role="HopDong">
+        <PropertyRef Name="Ma_SV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Khu_NhanVien">
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
+    <End Role="Khu" Type="Self.Khu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="Ma_NV" />
+      </Principal>
+      <Dependent Role="Khu">
+        <PropertyRef Name="Ma_NV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Phong_Khu1">
+    <End Role="Khu" Type="Self.Khu" Multiplicity="1" />
+    <End Role="Phong" Type="Self.Phong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khu">
+        <PropertyRef Name="Khu1" />
+      </Principal>
+      <Dependent Role="Phong">
+        <PropertyRef Name="Khu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NhanVien_Login">
+    <End Role="Login" Type="Self.Login" Multiplicity="0..1" />
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Login">
+        <PropertyRef Name="Ma_TK" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="Ma_TK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SV_Login">
+    <End Role="Login" Type="Self.Login" Multiplicity="0..1" />
+    <End Role="SV" Type="Self.SV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Login">
+        <PropertyRef Name="Ma_TK" />
+      </Principal>
+      <Dependent Role="SV">
+        <PropertyRef Name="Ma_TK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PBL3Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="HDs" EntityType="Self.HD" />
+    <EntitySet Name="HopDongs" EntityType="Self.HopDong" />
+    <EntitySet Name="Khus" EntityType="Self.Khu" />
+    <EntitySet Name="Logins" EntityType="Self.Login" />
+    <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
+    <EntitySet Name="Phongs" EntityType="Self.Phong" />
+    <EntitySet Name="SVs" EntityType="Self.SV" />
+    <EntitySet Name="TKNHs" EntityType="Self.TKNH" />
+    <AssociationSet Name="FK_HD_Phong" Association="Self.FK_HD_Phong">
+      <End Role="Phong" EntitySet="Phongs" />
+      <End Role="HD" EntitySet="HDs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HopDong_NhanVien" Association="Self.FK_HopDong_NhanVien">
+      <End Role="NhanVien" EntitySet="NhanViens" />
+      <End Role="HopDong" EntitySet="HopDongs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HopDong_Phong" Association="Self.FK_HopDong_Phong">
+      <End Role="Phong" EntitySet="Phongs" />
+      <End Role="HopDong" EntitySet="HopDongs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HopDong_SV" Association="Self.FK_HopDong_SV">
+      <End Role="SV" EntitySet="SVs" />
+      <End Role="HopDong" EntitySet="HopDongs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Khu_NhanVien" Association="Self.FK_Khu_NhanVien">
+      <End Role="NhanVien" EntitySet="NhanViens" />
+      <End Role="Khu" EntitySet="Khus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Phong_Khu1" Association="Self.FK_Phong_Khu1">
+      <End Role="Khu" EntitySet="Khus" />
+      <End Role="Phong" EntitySet="Phongs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhanVien_Login" Association="Self.FK_NhanVien_Login">
+      <End Role="Login" EntitySet="Logins" />
+      <End Role="NhanVien" EntitySet="NhanViens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SV_Login" Association="Self.FK_SV_Login">
+      <End Role="Login" EntitySet="Logins" />
+      <End Role="SV" EntitySet="SVs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
