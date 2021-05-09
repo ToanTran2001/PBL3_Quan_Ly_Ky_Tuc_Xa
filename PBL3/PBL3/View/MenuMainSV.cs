@@ -24,7 +24,12 @@ namespace PBL3
         {
             txtMaTK.Text = lg.Ma_TK;
            
-            txtNameTK.Text = BLL_MenuAD.Instance.BLL_MenuADSetName(lg.Ma_TK);
+            txtNameTK.Text = BLL_MenuSV.Instance.BLL_MenuSVSetName(lg.Ma_TK);
+        }
+
+        private void butThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
