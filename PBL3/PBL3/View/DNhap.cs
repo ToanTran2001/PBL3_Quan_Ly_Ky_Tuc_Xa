@@ -16,6 +16,14 @@ namespace PBL3
         public DNhap()
         {
             InitializeComponent();
+            show();
+        }
+        public void show()
+        {
+            txtUser.Text = "adtoan2001";
+            txtPass.Text = "0123456   ";
+            //txtUser.Text = "toan2001  ";
+            //txtPass.Text = "12345     ";
         }
 
         private void butCancel_Click(object sender, EventArgs e)
@@ -37,7 +45,7 @@ namespace PBL3
             if (i == null) MessageBox.Show("Sai thông tin tài khoản hoặc mật khẩu!");
             else
             {
-                if (i.Loai_TK == "1")
+                if (i.Loai_TK == "1         ")
                 {
                     MenuAdmin f = new MenuAdmin(i);
                     this.Hide();

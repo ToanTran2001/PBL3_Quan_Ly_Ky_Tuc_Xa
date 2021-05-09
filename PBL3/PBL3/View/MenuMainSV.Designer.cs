@@ -90,6 +90,7 @@ namespace PBL3
             this.butThoat.TabIndex = 5;
             this.butThoat.Text = "Thoát";
             this.butThoat.UseVisualStyleBackColor = true;
+            this.butThoat.Click += new System.EventHandler(this.butThoat_Click);
             // 
             // txtNameTK
             // 

@@ -24,6 +24,7 @@ namespace PBL3.BLL
 		
 		public Login  DangNhap(string UserName, string PW)
         {
+			
 			PBL3Entities db = new PBL3Entities();
 			foreach (Login i in db.Logins)
             {
