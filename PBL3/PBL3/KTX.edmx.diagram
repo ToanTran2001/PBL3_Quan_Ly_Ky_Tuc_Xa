@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="839e9b520328493c8e3d325ad746e2d0" Name="Diagram1">
+        <EntityTypeShape EntityType="PBL3_KTX.HD" Width="1.5" PointX="7.5" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3_KTX.HopDong" Width="1.5" PointX="7.5" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3_KTX.Khu" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3_KTX.NhanVien" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3_KTX.Phong" Width="1.5" PointX="5.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3_KTX.SV" Width="1.5" PointX="5.25" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3_KTX.TKNH" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3_KTX.Login" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <AssociationConnector Association="PBL3_KTX.FK_HD_Phong" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3_KTX.FK_HopDong_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3_KTX.FK_HopDong_Phong" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3_KTX.FK_HopDong_SV" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3_KTX.FK_Khu_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3_KTX.FK_Phong_Khu1" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3_KTX.FK_NhanVien_Login" />
+        <AssociationConnector Association="PBL3_KTX.FK_SV_Login" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
